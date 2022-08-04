@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>로그인</title>
+</head>
+
+<body class="loginBody">
+<h2 class="login-form">----------0000000000000000000000------------</h2>
+<input id="test">
+</body>
+<script>
+
+
+    window.onload(mypage_check);
+    function mypage_check(){
+        var uid = sessionStorage.getItem('userId');
+
+        document.getElementById("test").value = uid;
+    }
+</script>
+
+
+
+</html>

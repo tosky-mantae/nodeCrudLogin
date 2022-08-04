@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+       <meta charset="UTF-8">
+    <title>리스트 테이블 버전</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/script/list.js"></script>
+</head>
+<body>
+<div class="fullContainer">
+    <div>
+        <table>
+            <colgroup>
+                <col style="width: 5%">
+                <col style="width: 15%">
+                <col style="width: 50%">
+                <col style="width: 20%">
+            </colgroup>
+            <thead>
+            <tr>
+                <th colspan="4">
+                    <h1 onclick="searchReset()">게시판목록</h1>
+                </th>
+            </tr>
+            <a href="/add">글 등록</a>
+            <tr>
+                <th class="listArticleHead">글번호</th>
+                <th class="listArticleHead">작성자</th>
+                <th class="listArticleHead">제목</th>
+                <th class="listArticleHead">작성시간</th>
+            </tr>
+            </thead>
+            <tbody id="listTbody">
+            <tr><!--게시글 반복 배열-->
+                <!--                  여기에 게시글 배치-->
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+</body>
+</html>

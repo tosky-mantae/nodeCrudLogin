@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+   <title>게시글작성 창</title>
+  </head>
+<body>
+<div>
+  <form action="/add" method="post" name="articleForm" id="articleForm">
+    <table>
+      <colgroup>
+        <col style="width: 25%">
+        <col style="width: 70%">
+      </colgroup>
+      <thead>
+      <tr>
+        <td colspan="2">
+          <h1>작성페이지</h1>
+        </td>
+      </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="viewTextTitle"> 작성자 </td>
+          <td>
+            <input class="viewText" maxlength='10' type="text" id="writer">
+          </td>
+        </tr>
+      <tr>
+        <td class="viewTextTitle"> 제목 </td>
+        <td>
+          <input class="viewText" maxlength='30' type="text" placeholder="제목을 입력 하세요" id="title">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <textarea style="width:99%; height:10em; resize:none;" placeholder="내용을 입력 하세요" id="content"></textarea>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <input class="viewBack" type="button" value="취소" onclick="historyBack()";>
+    <input class="viewModify" type="submit" value="등록">
+  </form>
+</div>
+</body>
+
+
+</html>

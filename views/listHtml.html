@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<h1><%= title %></h1>
+<button onclick="location.href='add'"> 글쓰기 </button>
+<table border="2">
+    <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>글쓴이</th>
+        <th>수정/삭제</th>
+    </tr>
+    <% results.forEach((data,index) => {%>
+    <tr>
+        <th scope="row"><%= index + 1%></th>
+        <td><%= data.title %></td>
+        <td><%= data.writer %></td>
+        <td>
+            <a  href="/modify/<%= data.boardNo %> ">수정/삭제</a>
+        </td>
+    </tr>
+
+    <% }) %>
+
+</table>
+</body>
+</html>
