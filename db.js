@@ -3,8 +3,8 @@ var pool  = mysql.createPool({
     connectionLimit : 10,
     host            : 'localhost',
     user            : 'mantae',
-    password        : 'qlrqod12!@',
-    database        : 'bike'
+    password        : 'tosky12#',
+    database        : 'kimskiosk'
 });
 function getConnection(callback) {
     pool.getConnection(function (err, conn) {

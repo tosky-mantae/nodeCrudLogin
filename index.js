@@ -2,8 +2,8 @@ const express = require('express') //express를 설치했기 때문에 가져올
 const app = express();
 const getConnection = require('./db');
 const path = require('path'); //path를 import한다
-const passport = require('passport'),LocalStrategy = require('passport-local').Strategy;;
-const expressSession = require('express-session')
+const passport = require('passport'),LocalStrategy = require('passport-local').Strategy;
+const expressSession = require('express-session');
 const flash = require('connect-flash');
 
 
@@ -20,6 +20,8 @@ app.use(expressSession({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
+
 
 
 
@@ -44,7 +46,15 @@ app.post('/', (req, res) => {
             // When done with the connection, release it.
             conn.release();
             console.log(results)
-            res.json({articles : results})
+            let sesion;
+            if(req.session.user){
+                sesion = req.session.user;
+                console.log(req.session.user);
+            }
+            res.json({
+                user : sesion,
+                articles : results
+            })
             // res.render("list",{
             //     title : "목록",
             //     results : results
@@ -77,6 +87,11 @@ app.post('/', (req, res) => {
 
 //조회 html 이동
 app.get('/view', (req, res) => {
+
+    if(!req.session){
+        res.redirect('/');
+    }
+
     res.sendFile(__dirname+"/static/templates/view.html");
 });
 app.post('/view', (req, res) => {
@@ -98,6 +113,10 @@ app.post('/view', (req, res) => {
 
 //등록 html 이동
 app.get('/add', (req, res) => {
+    if(!req.session.passport){
+        res.redirect('/');
+        return ;
+    }
     res.sendFile(__dirname+"/static/templates/add.html");
 })
 //등록 처리 로직
@@ -227,6 +246,14 @@ passport.deserializeUser(function(user, done) {
     console.log(user);
 
     done(null, user);
+})
+
+app.get('/delSession', (req, res) => {
+    if(req.session){
+        req.session.destroy(()=>{
+            res.redirect('/');
+        });
+    }
 })
 
 
