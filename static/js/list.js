@@ -18,8 +18,6 @@ function ajaxGetList() {
 
             $("#aaa").html(json.user);
 
-
-
             $("#listTbody").html("");
             let row = ""
             for(let i = 0; i < list.length; i++) {
