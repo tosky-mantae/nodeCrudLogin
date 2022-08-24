@@ -2,6 +2,9 @@ function hiddenException() {
     $(".exception").css("display" , "none");
 };
 
+
+
+
 window.onload = function() {
     // 경고태그 히든처리
     hiddenException();
