@@ -16,17 +16,6 @@ function ajaxGetList() {
             // 게시글 뿌리기
             let list = json.articles;
 
-
-
-
-
-
-
-
-
-
-
-
             $("#aaa").html(json.user);
 
             $("#listTbody").html("");
