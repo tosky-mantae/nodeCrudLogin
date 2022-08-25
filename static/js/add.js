@@ -49,6 +49,7 @@ function writeCheck() {
     if($.trim($("#writer").val()) == "") {
         alert('작성자를 입력해주세요');
         $("#writerException").css("display" , "");
+        console.log('123')
         return false;
     }
 
