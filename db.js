@@ -16,7 +16,7 @@ function getConnection(callback) {
 
 module.exports = getConnection;
 
-
+console.log('123')
 // pool.getConnection(function(err, connection) {
 //     if (err) throw err; // not connected!
 //
