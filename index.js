@@ -21,9 +21,7 @@ app.use(expressSession({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-
-
-
+console.log('123')
 
 
 // app.use(bodyParser.urlencoded({ extended: false }));
