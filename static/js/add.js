@@ -40,6 +40,8 @@ function writeCheck() {
 
     if($.trim($("#title").val()) == "") {
         alert('제목을 입력해주세요');
+        console.log('123')
+        console.log('123')
         $("#titleException").css("display" , "");
         return false;
     }
