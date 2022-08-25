@@ -59,6 +59,7 @@ function writeCheck() {
         writeAjax();
     } else {
 
+            console.log('12')
     }
 };
 
